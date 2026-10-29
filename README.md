@@ -1,4 +1,4 @@
-# 🎮 Video Game Sales Dashboard
+# Video Game Sales Dashboard
 
 ## Purpose
 The Video Game Sales Dashboard is an interactive web application built with Python and Streamlit. It allows users to explore historical video game sales data, view the number of games released over time, examine key statistics, and discover insights about video game sales. Users can filter the data by release year and download the filtered dataset as a CSV file.
@@ -19,6 +19,12 @@ The dataset includes information about video game titles, platforms, release yea
 5. Scroll to the data display section to view the filtered records.
 6. Click the **Download Filtered Data as CSV** button to download the displayed data.
 7. Review the insights section to learn more about the selected data.
+
+Live Dashboard
+
+Access the deployed application here:
+
+https://video-games-data-project-msre2x8ysfqq8fgw3hbxrj.streamlit.app/
 
 ### Running the App Locally
 
