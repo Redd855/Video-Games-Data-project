@@ -21,7 +21,7 @@ st.write(
     This application explores historical video game sales data.
     You can examine the number of games released each year,
     explore the dataset, and discover patterns in the video
-    game industry.
+    game industry.  
     """
 )
 
@@ -164,11 +164,6 @@ if not games_per_year.empty:
         games_per_year["Number of Games"].idxmax()
     ]
 
-    st.write(
-        f"**Observation:** The highest number of game records "
-        f"in the selected period occurred in {int(peak_year['Year'])}, "
-        f"with {int(peak_year['Number of Games'])} games."
-    )
 
 else:
     st.warning(
@@ -176,11 +171,6 @@ else:
         "in the selected range."
     )
 
-st.caption(
-    "Note: This chart counts records in the dataset, not necessarily "
-    "every video game released worldwide. Records with missing "
-    "release years are excluded."
-)
 
 st.divider()
 
@@ -213,13 +203,6 @@ st.dataframe(
 
 # Download filtered data
 csv_data = filtered_df.to_csv(index=False).encode("utf-8")
-
-st.download_button(
-    label="Download Filtered Data as CSV",
-    data=csv_data,
-    file_name="filtered_video_game_sales.csv",
-    mime="text/csv"
-)
 
 st.divider()
 
@@ -277,43 +260,9 @@ if not filtered_df.empty:
             f"{best_game['Global_Sales']:.2f} million units"
         )
 
-    st.info(
-        "Interpret these findings carefully. The dataset contains "
-        "historical sales estimates and may have missing values. "
-        "These observations describe the available records and do "
-        "not establish why a particular game or genre was successful."
-    )
-
 else:
     st.warning(
         "There are no records available for the current selection."
     )
 
 st.divider()
-
-# ============================================
-# 8. ABOUT THE DATASET
-# ============================================
-
-st.header("5. About the Dataset")
-
-st.write(
-    """
-    The Video Game Sales dataset contains historical information
-    about video game titles, platforms, release years, genres,
-    publishers, and estimated sales across different regions.
-
-    It is useful for exploring release patterns and comparing
-    game sales across the video game industry.
-    """
-)
-
-st.markdown(
-    "Dataset source: "
-    "[Video Game Sales on Kaggle]"
-    "(https://www.kaggle.com/datasets/gregorut/videogamesales)"
-)
-
-st.caption(
-    "Developed using Python, Streamlit, Pandas, and Plotly."
-)
